@@ -1,0 +1,21 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using WebApi.Repository;
+using WebApi.Models;
+
+
+namespace WebApi.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class NombreController : ControllerBase
+    {
+        /*Este apartado no se suele hacer en los trabajos,
+        pero es la forma de que puedan ponerle su nombre a su App sin tocar el Front End*/
+        [HttpGet]
+        public string Get()
+        {
+            return "INSERTE EL NOMBRE DE SU APP AQUI";
+        }
+    }
+}
