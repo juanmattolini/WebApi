@@ -13,18 +13,13 @@ namespace WebApi.Controllers
     [Route("api/[controller]")]
     public class ProductoController : ControllerBase
     {
-        //private readonly ILogger<ProductoController> _logger;
 
-        //public ProductoController(ILogger<ProductoController> logger)
-        //{
-        //    _logger = logger;
-        //}
 
-        //[HttpGet("{idUsuario}")]
-        //public IEnumerable<Producto> GetAllProductos(int idUsuario)
-        //{
-        //    return TraerProducto.GetProductos(idUsuario);
-        //}
+        [HttpGet("{idUsuario}")]
+        public IEnumerable<Producto> GetAllProductos(int idUsuario)
+        {
+            return TraerProducto.GetProductos(idUsuario);
+        }
 
         [HttpPut]
         public void PutProductos(Producto producto)
