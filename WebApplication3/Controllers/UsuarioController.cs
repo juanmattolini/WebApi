@@ -16,13 +16,13 @@ namespace WebApi.Controllers
         //    _logger = logger;
         //}
 
-        //[HttpGet("{nombreUsuario}/{contraseña}")]
-        //public Usuario GetUsuarioByContraseña(string nombreUsuario, string contraseña)
-        //{
-        //    var usuario = TraerUsuario.GetUsuarioByPassword(nombreUsuario, contraseña);
+        [HttpGet("{nombreUsuario}/{contraseña}")]
+        public Usuario GetUsuarioByContraseña(string nombreUsuario, string contraseña)
+        {
+            var usuario = TraerUsuario.GetUsuarioByPassword(nombreUsuario, contraseña);
 
-        //    return usuario == null ? new Usuario() : usuario;
-        //}
+            return usuario == null ? new Usuario() : usuario;
+        }
 
         [HttpGet("{nombreUsuario}")]
         public Usuario GetUsuarioByNombre(string nombreUsuario)
