@@ -8,13 +8,7 @@ namespace WebApi.Controllers
     [Route("api/[controller]")]
     public class UsuarioController : ControllerBase
     {
-        ////static void Main() { }
-        //private readonly ILogger<ProductoVendido> _logger;
-
-        //public UsuarioController(ILogger<ProductoVendido> logger)
-        //{
-        //    _logger = logger;
-        //}
+    
 
         [HttpGet("{nombreUsuario}/{contraseña}")]
         public Usuario GetUsuarioByContraseña(string nombreUsuario, string contraseña)

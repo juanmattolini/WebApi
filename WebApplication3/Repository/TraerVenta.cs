@@ -106,5 +106,40 @@ namespace WebApi.Repository
         }
 
 
+        public static bool EliminarVenta(int Id)
+        {
+            string connectionString = @"Server=swdmdzbaspi02;Database=SistemaGestion;Trusted_Connection=True;";
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand sqlCommand = new SqlCommand())
+                {
+                    sqlCommand.Connection = sqlConnection;
+                    sqlCommand.Connection.Open();
+
+                    sqlCommand.CommandText = @" DELETE 
+                                                    Venta
+                                                WHERE 
+                                                    Id = @ID
+                                            ";
+
+                    sqlCommand.Parameters.AddWithValue("@ID", Id);
+
+
+                    int recordsAffected = sqlCommand.ExecuteNonQuery(); //Se ejecuta realmente el DELETE
+
+                    sqlCommand.Connection.Close();
+
+                    if (recordsAffected != 1)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+
     }
 }

@@ -13,13 +13,7 @@ namespace WebApi.Controllers
     [Route("api/[controller]")]
     public class VentaController : ControllerBase
     {
-        //private readonly ILogger<ProductoVendido> _logger;
-
-        //public VentaController(ILogger<ProductoVendido> logger)
-        //{
-        //    _logger = logger;
-        //}
-
+       
         [HttpGet("{idUsuario}")]
         public IEnumerable<Venta> GetVentas(int idUsuario)
         {
@@ -30,6 +24,12 @@ namespace WebApi.Controllers
         public void PostVenta(List<Producto> productos, int idUsuario)
         {
             TraerVenta.InsertVenta(productos, idUsuario);
+        }
+
+        [HttpDelete("{Id}")]
+        public void DeleteVenta(int Id)
+        {
+            TraerVenta.EliminarVenta(Id);
         }
     }
 }

@@ -19,8 +19,7 @@ namespace WebApi.Repository
 
     public static class TraerUsuario
     {
-    
-        //public static List<Usuario> ListarUsuarios()
+ 
         public static List<Usuario> GetUsuarios(DataTable table)
 
         {
